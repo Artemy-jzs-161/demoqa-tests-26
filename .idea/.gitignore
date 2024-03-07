@@ -3,19 +3,14 @@ build/
 !**/src/main/**
 !**/src/test/**
 
-
-
-### Package Files ###
-*.jar
-*.war
-*.ear
+### IntelliJ IDEA ###
+.idea
 *.iws
-
+*.iml
+*.ipr
 
 ### Gradle ###
-.idea/gradle.xml
-.idea/libraries
 .gradle
 
-### logs ###
+### Logs ###
 *.log
