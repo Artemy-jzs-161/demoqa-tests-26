@@ -1,0 +1,21 @@
+HELP.md
+build/
+!**/src/main/**
+!**/src/test/**
+
+
+
+### Package Files ###
+*.jar
+*.war
+*.ear
+*.iws
+
+
+### Gradle ###
+.idea/gradle.xml
+.idea/libraries
+.gradle
+
+### logs ###
+*.log
