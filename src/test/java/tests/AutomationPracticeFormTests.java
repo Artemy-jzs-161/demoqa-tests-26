@@ -79,7 +79,7 @@ public class AutomationPracticeFormTests {
         $("#react-select-3-input").setValue(state).pressEnter();
         $("#react-select-4-input").setValue(city).pressEnter();
 
-        //buttom
+        //button
         $("#submit").click();
 
         //assert
