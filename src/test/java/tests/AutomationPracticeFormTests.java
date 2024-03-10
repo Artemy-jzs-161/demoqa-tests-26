@@ -4,20 +4,17 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.*;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class AutomationPracticeFormTests {
+
     String firstName = "Ivan";
     String lastName = "Ivanov";
     String userEmail = "IvanIvanov@google.com";
     String userNumber = "9133333333";
     String genderMale = "Male";
-    //String genderFemale = "Female";
-    //String genderOther = "Other";
     String year = "2000";
     String month = "January";
     String day = "1";
@@ -30,14 +27,11 @@ public class AutomationPracticeFormTests {
     String state = "NCR";
     String city = "Delhi";
 
-
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
-        Configuration.timeout = 5000; // default 4000
     }
 
     @AfterAll
@@ -46,7 +40,7 @@ public class AutomationPracticeFormTests {
     }
 
     @Test
-    void StudentRegistrationFormTest() {
+    void studentRegistrationFormTest() {
         open("/automation-practice-form");
         //firstName
         $("#firstName").setValue(firstName);
@@ -67,7 +61,6 @@ public class AutomationPracticeFormTests {
         $(".react-datepicker__year-select").selectOption(year);
         $(".react-datepicker__month").$(byText(day)).click();
 
-
         //subjects
         $("#subjectsInput").setValue(subject).pressEnter();
 
@@ -77,7 +70,7 @@ public class AutomationPracticeFormTests {
         $("#hobbiesWrapper").$(byText(hobbyMusic)).click();
 
         //picture
-        $("#uploadPicture").uploadFile(new File("src/test/resources/" + picture));
+        $("#uploadPicture").uploadFromClasspath(picture);
 
         //currentAddress
         $("#currentAddress").setValue(currentAddress);
