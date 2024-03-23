@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.*;
 
@@ -8,7 +7,8 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class AutomationPracticeFormTests {
+public class PracticeFormTests extends TestBase {
+
 
     String firstName = "Ivan";
     String lastName = "Ivanov";
@@ -22,17 +22,12 @@ public class AutomationPracticeFormTests {
     String hobbySport = "Sports";
     String hobbyReading = "Reading";
     String hobbyMusic = "Music";
-    String picture = "kitty.jpg";
+    String picture = "img/kitty.jpg";
     String currentAddress = "Kartavya Path, India Gate, New Delhi, Delhi 110001";
     String state = "NCR";
     String city = "Delhi";
 
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.pageLoadStrategy = "eager";
-    }
+
 
     @AfterAll
     static void afterAll() {
@@ -50,7 +45,7 @@ public class AutomationPracticeFormTests {
         $("#userEmail").setValue(userEmail).click();
 
         //gender
-        $("#genterWrapper").$(byText(genderMale)).click();
+        $("#genderWrapper").$(byText(genderMale)).click();
 
         //userNumber
         $("#userNumber").setValue(userNumber);
