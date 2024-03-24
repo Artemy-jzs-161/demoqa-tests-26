@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTests extends TestBase {
 
-
     String firstName = "Ivan";
     String lastName = "Ivanov";
     String userEmail = "IvanIvanov@google.com";
@@ -26,8 +25,6 @@ public class PracticeFormTests extends TestBase {
     String currentAddress = "Kartavya Path, India Gate, New Delhi, Delhi 110001";
     String state = "NCR";
     String city = "Delhi";
-
-
 
     @AfterAll
     static void afterAll() {

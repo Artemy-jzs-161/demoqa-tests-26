@@ -3,23 +3,23 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TestBoxPage {
 
-    private SelenideElement
+    private final SelenideElement
             fullNameInput = $("#userName"),
             userEmailInput = $("#userEmail"),
             currentAddress = $("#currentAddress"),
             permanentAddress = $("#permanentAddress"),
             submitButton = $("#submit"),
-            outputForm = $("#output");
+            outputForm = $("#output"),
+            textCenter = $(".text-center");
 
     public TestBoxPage openPage() {
         open("/text-box");
-        $(".text-center").shouldHave(text("Text Box"));
+        textCenter.shouldHave(text("Text Box"));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;

@@ -5,15 +5,13 @@ import pages.components.CalendarComponent;
 import pages.components.ResultFormComponent;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
-
 
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultFormComponent resultFormComponent = new ResultFormComponent();
-    private SelenideElement
+    private final SelenideElement
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
@@ -26,17 +24,16 @@ public class RegistrationPage {
             addressInput = $("#currentAddress"),
             stateInput = $("#react-select-3-input"),
             cityInput = $("#react-select-4-input"),
-            submitButton = $("#submit");
-
+            submitButton = $("#submit"),
+            practiceFormWrapper = $(".practice-form-wrapper");
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text("Student Registration form"));
+        practiceFormWrapper.shouldHave(text("Student Registration Form"));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
-
 
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
