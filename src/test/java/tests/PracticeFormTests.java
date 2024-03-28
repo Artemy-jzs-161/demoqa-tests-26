@@ -21,7 +21,7 @@ public class PracticeFormTests extends TestBase {
     String hobbySport = "Sports";
     String hobbyReading = "Reading";
     String hobbyMusic = "Music";
-    String picture = "img/kitty.jpg";
+    String picture = "kitty.jpg";
     String currentAddress = "Kartavya Path, India Gate, New Delhi, Delhi 110001";
     String state = "NCR";
     String city = "Delhi";

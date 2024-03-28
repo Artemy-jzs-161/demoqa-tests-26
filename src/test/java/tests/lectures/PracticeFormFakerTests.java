@@ -1,8 +1,9 @@
-package tests;
+package tests.lectures;
 
 import com.codeborne.selenide.Selenide;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.*;
+import tests.TestBase;
 
 import java.util.Locale;
 
@@ -27,7 +28,7 @@ public class PracticeFormFakerTests extends TestBase {
     String hobbySport = "Sports";
     String hobbyReading = "Reading";
     String hobbyMusic = "Music";
-    String picture = "img/kitty.jpg";
+    String picture = "kitty.jpg";
     String state = "NCR";
     String city = "Delhi";
 

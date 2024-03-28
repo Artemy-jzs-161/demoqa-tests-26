@@ -18,7 +18,7 @@ public class PracticeFromPageObjectTests extends TestBase {
                 .setDateOfBirth("30", "January", "2000")
                 .setSubject("Chemistry")
                 .setHobbies("Music")
-                .setUploadPicture("img/kitty.jpg")
+                .setUploadPicture("kitty.jpg")
                 .setAddress("Kartavya Path, India Gate, New Delhi, Delhi 110001")
                 .setStateAndCity("NCR", "Delhi")
                 .pressSubmit();
