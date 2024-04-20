@@ -1,8 +1,10 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.TestBoxPage;
 
+@Tag("RegistrationTest")
 public class TestBoxPageObjectTests extends TestBase {
 
     TestBoxPage testBoxPage = new TestBoxPage();
