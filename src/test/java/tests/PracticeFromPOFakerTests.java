@@ -3,7 +3,7 @@ package tests;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("RegistrationTest")
+@Tag("registration")
 public class PracticeFromPOFakerTests extends TestBase {
      @Test
     void fullSuccessfulRegistrationTest() {
