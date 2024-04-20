@@ -8,6 +8,9 @@ repositories {
     mavenCentral()
 }
 
+def allureVersion = "2.27.0",
+    selenideVersion = "7.2.3"
+
 dependencies {
     runtimeOnly 'org.aspectj:aspectjweaver:1.9.22'
     testImplementation(
