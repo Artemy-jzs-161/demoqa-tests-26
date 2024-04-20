@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import pages.TestBoxPage;
 
 @Tag("registration")
-public class TestBoxPageObjectTests extends TestBase {
+public class TestBoxTests extends TestBase {
 
     TestBoxPage testBoxPage = new TestBoxPage();
 

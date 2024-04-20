@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class PracticeFromPOFakerTests extends TestBase {
+public class PracticeFromTests extends TestBase {
     @Feature("Форма регистрации")
     @Story("Заполнение Practice Form")
     @Owner("Artemy-jzs-161")
