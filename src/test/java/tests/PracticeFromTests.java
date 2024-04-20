@@ -5,13 +5,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("registration")
 public class PracticeFromTests extends TestBase {
     @Feature("Форма регистрации")
     @Story("Заполнение Practice Form")
     @Owner("Artemy-jzs-161")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Отправка формы со всеми заполненными полями")
-    @Tag("registration")
     @Test
     void fullSuccessfulRegistrationTest() {
         registrationPage
@@ -46,7 +46,6 @@ public class PracticeFromTests extends TestBase {
     @Owner("Artemy-jzs-161")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Отправка формы с обязательными к заполненению полями")
-    @Tag("registration")
     @Test
     void minSuccessfulRegistrationTest() {
         registrationPage
@@ -68,7 +67,6 @@ public class PracticeFromTests extends TestBase {
     @Owner("Artemy-jzs-161")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Отправка формы с незаполненным именем")
-    @Tag("registration")
     @Test
     void emptyFirstNameRegistrationTest() {
         registrationPage
@@ -88,7 +86,6 @@ public class PracticeFromTests extends TestBase {
     @Owner("Artemy-jzs-161")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Отправка формы с незаполненной фамилией")
-    @Tag("registration")
     @Test
     void emptyLastNameRegistrationTest() {
         registrationPage
@@ -107,7 +104,6 @@ public class PracticeFromTests extends TestBase {
     @Owner("Artemy-jzs-161")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Отправка формы с незаполненным полом")
-    @Tag("registration")
     @Test
     void emptyGenderRegistrationTest() {
         registrationPage
@@ -127,7 +123,6 @@ public class PracticeFromTests extends TestBase {
     @Owner("Artemy-jzs-161")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Отправка формы с незаполненным телефоном")
-    @Tag("registration")
     @Test
     void emptyUserNumberRegistrationTest() {
         registrationPage

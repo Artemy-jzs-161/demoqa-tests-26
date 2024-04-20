@@ -16,7 +16,6 @@ public class TestBoxTests extends TestBase {
     @Owner("Artemy-jzs-161")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Отправка формы со всеми заполненными полями")
-    @Tag("registration")
     @Test
     void fullSuccessfulRegistrationTest() {
         testBoxPage
