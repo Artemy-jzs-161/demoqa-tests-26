@@ -50,15 +50,15 @@ public class PracticeFromTests extends TestBase {
     void minSuccessfulRegistrationTest() {
         registrationPage
                 .openPage()
-                .setFirstName("Sveta")
-                .setLastName("Svetlakova")
-                .setGender("Female")
-                .setUserNumber("8888888888")
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setGender(testData.gender)
+                .setUserNumber(testData.userNumber)
                 .pressSubmit();
         registrationPage
-                .checkResult("Student Name", "Sveta Svetlakova")
-                .checkResult("Gender", "Female")
-                .checkResult("Mobile", "8888888888");
+                .checkResult("Student Name", testData.firstName + " " + testData.lastName)
+                .checkResult("Gender", testData.gender)
+                .checkResult("Mobile", testData.userNumber);
 
     }
 
@@ -71,9 +71,9 @@ public class PracticeFromTests extends TestBase {
     void emptyFirstNameRegistrationTest() {
         registrationPage
                 .openPage()
-                .setLastName("Svetlakova")
-                .setGender("Female")
-                .setUserNumber("8888888888")
+                .setLastName(testData.lastName)
+                .setGender(testData.gender)
+                .setUserNumber(testData.userNumber)
                 .pressSubmit();
         registrationPage
                 .checkFormIsNotDisplayed()
@@ -90,9 +90,9 @@ public class PracticeFromTests extends TestBase {
     void emptyLastNameRegistrationTest() {
         registrationPage
                 .openPage()
-                .setFirstName("Sveta")
-                .setGender("Female")
-                .setUserNumber("8888888888")
+                .setFirstName(testData.firstName)
+                .setGender(testData.gender)
+                .setUserNumber(testData.userNumber)
                 .pressSubmit();
         registrationPage
                 .checkFormIsNotDisplayed()
@@ -108,9 +108,9 @@ public class PracticeFromTests extends TestBase {
     void emptyGenderRegistrationTest() {
         registrationPage
                 .openPage()
-                .setFirstName("Sveta")
-                .setLastName("Svetlakova")
-                .setUserNumber("8888888888")
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setUserNumber(testData.userNumber)
                 .pressSubmit();
         registrationPage
                 .checkFormIsNotDisplayed()
@@ -127,9 +127,9 @@ public class PracticeFromTests extends TestBase {
     void emptyUserNumberRegistrationTest() {
         registrationPage
                 .openPage()
-                .setFirstName("Sveta")
-                .setLastName("Svetlakova")
-                .setGender("Female")
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setGender(testData.gender)
                 .pressSubmit();
         registrationPage
                 .checkFormIsNotDisplayed()
