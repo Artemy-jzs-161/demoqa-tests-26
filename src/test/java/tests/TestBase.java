@@ -22,7 +22,6 @@ public class TestBase {
 
 
     @BeforeAll
-    @Step("Открыть страницу https://demoqa.com в разрешении 1920x1080")
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
@@ -41,7 +40,6 @@ public class TestBase {
     }
 
     @AfterEach
-    @Step("Аттачменты")
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
