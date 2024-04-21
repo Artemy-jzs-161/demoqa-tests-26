@@ -31,7 +31,6 @@ public class TestBase {
     }
 
     @AfterEach
-    @Test
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
