@@ -12,14 +12,9 @@ import io.qameta.allure.Step;
 
 import java.util.Map;
 
-import static helpers.Attach.pageSource;
-
-
 public class TestBase {
-
     RegistrationPage registrationPage = new RegistrationPage();
     TestData testData = new TestData();
-
 
     @BeforeAll
     static void beforeAll() {
@@ -36,7 +31,6 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
     }
 
     @AfterEach
