@@ -57,3 +57,14 @@ task registration_tests(type: Test) {
         includeTags("registration")
     }
 }
+
+task test_box_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("test_box")
+    }
+}
+task practice_from_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("practice_from")
+    }
+}

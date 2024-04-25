@@ -4,7 +4,9 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import pages.TestBoxPage;
 
-@Tag("registration")
+import static io.qameta.allure.Allure.step;
+
+@Tags({@Tag("registration"), @Tag("test_box")})
 public class TestBoxTests extends TestBase {
     TestBoxPage testBoxPage = new TestBoxPage();
 
@@ -15,17 +17,29 @@ public class TestBoxTests extends TestBase {
     @DisplayName("Отправка формы со всеми заполненными полями")
     @Test
     void fullSuccessfulRegistrationTest() {
-        testBoxPage
-                .openPage()
-                .setFullName("Ivan Ivanov")
-                .setEmail("IvanIvanov@google.com")
-                .setCurrentAddress("lenina 1")
-                .setPermanentAddress("kirova 2")
-                .pressSubmit();
-        testBoxPage
-                .checkResult("Name:", "Ivan Ivanov")
-                .checkResult("Email:", "IvanIvanov@google.com")
-                .checkResult("Current Address :", "lenina 1")
-                .checkResult("Permananet Address :", "kirova 2");
+
+        step("Открыть Test Box ", () -> {
+            testBoxPage.openPage();
+        });
+
+        step("Заполнение формы ", () -> {
+            testBoxPage
+                    .setFullName(testData.firstName + " " + testData.lastName)
+                    .setEmail(testData.userEmail)
+                    .setCurrentAddress(testData.currentAddress)
+                    .setPermanentAddress(testData.currentAddress);
+        });
+
+        step("Нашать кнопку Submit", () -> {
+            testBoxPage.pressSubmit();
+        });
+
+        step("Проверка заполненных данных", () -> {
+            testBoxPage
+                    .checkResult("Name:", testData.firstName + " " + testData.lastName)
+                    .checkResult("Email:", testData.userEmail)
+                    .checkResult("Current Address :", testData.currentAddress)
+                    .checkResult("Permananet Address :", testData.currentAddress);
+        });
     }
 }

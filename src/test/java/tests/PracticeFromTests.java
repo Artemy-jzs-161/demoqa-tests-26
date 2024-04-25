@@ -7,7 +7,7 @@ import org.junit.jupiter.api.*;
 import static io.qameta.allure.Allure.step;
 
 
-@Tag("registration")
+@Tags({@Tag("registration"), @Tag("practice_from")})
 public class PracticeFromTests extends TestBase {
     @Feature("Форма регистрации")
     @Story("Заполнение Practice Form")
@@ -22,7 +22,7 @@ public class PracticeFromTests extends TestBase {
             registrationPage.openPage();
         });
 
-        step("Залнение регистрационных данных", () -> {
+        step("Заполнение регистрационных данных", () -> {
             registrationPage.setFirstName(testData.firstName)
                     .setLastName(testData.lastName)
                     .setEmail(testData.userEmail)
