@@ -141,7 +141,7 @@ public class RegistrationPage {
     @Step("Проверить, что фамилия не заполнена")
     public RegistrationPage checkEmptyLastName() {
         lastNameInput.shouldBe(empty);
-        lastNameInput.shouldHave(cssValue("color", "rgb(220, 53, 69)"));
+        lastNameInput.shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         lastNameInput.shouldHave(cssValue("background-image", "url(\"data:image/svg+xml,%3csvg" +
                 " xmlns='http://www.w3.org/2000/svg'" +
                 " width='12' height='12' fill='none' stroke='%23dc3545'" +
@@ -155,7 +155,7 @@ public class RegistrationPage {
     @Step("Проверить, что телефон не заполнен")
     public RegistrationPage checkEmptyUserNumber() {
         userNumberInput.shouldBe(empty);
-        userNumberInput.shouldHave(cssValue("color", "rgb(220, 53, 69)"));
+        userNumberInput.shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         userNumberInput.shouldHave(cssValue("background-image", "url(\"data:image/svg+xml,%3csvg" +
                 " xmlns='http://www.w3.org/2000/svg'" +
                 " width='12' height='12' fill='none' stroke='%23dc3545'" +
