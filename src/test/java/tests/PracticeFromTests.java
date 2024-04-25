@@ -62,7 +62,7 @@ public class PracticeFromTests extends TestBase {
         });
     }
 
-    /*
+
     @Feature("Форма регистрации")
     @Story("Заполнение Practice Form")
     @Owner("Artemy-jzs-161")
@@ -70,18 +70,29 @@ public class PracticeFromTests extends TestBase {
     @DisplayName("Отправка формы с обязательными к заполненению полями")
     @Test
     void minSuccessfulRegistrationTest() {
-        registrationPage
-                .openPage()
-                .setFirstName(testData.firstName)
-                .setLastName(testData.lastName)
-                .setGender(testData.gender)
-                .setUserNumber(testData.userNumber)
-                .pressSubmit();
-        registrationPage
-                .checkResult("Student Name", testData.firstName + " " + testData.lastName)
-                .checkResult("Gender", testData.gender)
-                .checkResult("Mobile", testData.userNumber);
 
+        step("Открыть Practice Form", () -> {
+            registrationPage.openPage();
+        });
+
+        step("Заполнение регистрационных данных", () -> {
+            registrationPage
+                    .setFirstName(testData.firstName)
+                    .setLastName(testData.lastName)
+                    .setGender(testData.gender)
+                    .setUserNumber(testData.userNumber);
+        });
+
+        step("Нашать кнопку Submit", () -> {
+            registrationPage.pressSubmit();
+        });
+
+        step("Проверка заполненных данных", () -> {
+            registrationPage
+                    .checkResult("Student Name", testData.firstName + " " + testData.lastName)
+                    .checkResult("Gender", testData.gender)
+                    .checkResult("Mobile", testData.userNumber);
+        });
     }
 
     @Feature("Форма регистрации")
@@ -91,17 +102,28 @@ public class PracticeFromTests extends TestBase {
     @DisplayName("Отправка формы с незаполненным именем")
     @Test
     void emptyFirstNameRegistrationTest() {
-        registrationPage
-                .openPage()
-                .setLastName(testData.lastName)
-                .setGender(testData.gender)
-                .setUserNumber(testData.userNumber)
-                .pressSubmit();
-        registrationPage
-                .checkFormIsNotDisplayed()
-                .checkEmptyFirstName();
+        step("Открыть Practice Form", () -> {
+            registrationPage.openPage();
+        });
 
+        step("Заполнение регистрационных данных", () -> {
+            registrationPage
+                    .setLastName(testData.lastName)
+                    .setGender(testData.gender)
+                    .setUserNumber(testData.userNumber);
+        });
+
+        step("Нашать кнопку Submit", () -> {
+            registrationPage.pressSubmit();
+        });
+
+        step("Проверка заполненных данных", () -> {
+            registrationPage
+                    .checkFormIsNotDisplayed()
+                    .checkEmptyFirstName();
+        });
     }
+
 
     @Feature("Форма регистрации")
     @Story("Заполнение Practice Form")
@@ -110,16 +132,28 @@ public class PracticeFromTests extends TestBase {
     @DisplayName("Отправка формы с незаполненной фамилией")
     @Test
     void emptyLastNameRegistrationTest() {
-        registrationPage
-                .openPage()
-                .setFirstName(testData.firstName)
-                .setGender(testData.gender)
-                .setUserNumber(testData.userNumber)
-                .pressSubmit();
-        registrationPage
-                .checkFormIsNotDisplayed()
-                .checkEmptyLastName();
+        step("Открыть Practice Form", () -> {
+            registrationPage.openPage();
+        });
+
+        step("Заполнение регистрационных данных", () -> {
+            registrationPage
+                    .setFirstName(testData.firstName)
+                    .setGender(testData.gender)
+                    .setUserNumber(testData.userNumber);
+        });
+
+        step("Нашать кнопку Submit", () -> {
+            registrationPage.pressSubmit();
+        });
+
+        step("Проверка заполненных данных", () -> {
+            registrationPage
+                    .checkFormIsNotDisplayed()
+                    .checkEmptyLastName();
+        });
     }
+
 
     @Feature("Форма регистрации")
     @Story("Заполнение Practice Form")
@@ -128,16 +162,26 @@ public class PracticeFromTests extends TestBase {
     @DisplayName("Отправка формы с незаполненным полом")
     @Test
     void emptyGenderRegistrationTest() {
-        registrationPage
-                .openPage()
-                .setFirstName(testData.firstName)
-                .setLastName(testData.lastName)
-                .setUserNumber(testData.userNumber)
-                .pressSubmit();
-        registrationPage
-                .checkFormIsNotDisplayed()
-                .checkEmptyGender();
+        step("Открыть Practice Form", () -> {
+            registrationPage.openPage();
+        });
 
+        step("Заполнение регистрационных данных", () -> {
+            registrationPage
+                    .setFirstName(testData.firstName)
+                    .setLastName(testData.lastName)
+                    .setUserNumber(testData.userNumber);
+        });
+
+        step("Нашать кнопку Submit", () -> {
+            registrationPage.pressSubmit();
+        });
+
+        step("Проверка заполненных данных", () -> {
+            registrationPage
+                    .checkFormIsNotDisplayed()
+                    .checkEmptyGender();
+        });
     }
 
     @Feature("Форма регистрации")
@@ -147,16 +191,27 @@ public class PracticeFromTests extends TestBase {
     @DisplayName("Отправка формы с незаполненным телефоном")
     @Test
     void emptyUserNumberRegistrationTest() {
-        registrationPage
-                .openPage()
-                .setFirstName(testData.firstName)
-                .setLastName(testData.lastName)
-                .setGender(testData.gender)
-                .pressSubmit();
-        registrationPage
-                .checkFormIsNotDisplayed()
-                .checkEmptyUserNumber();
-    }
+        step("Открыть Practice Form", () -> {
+            registrationPage.openPage();
+        });
 
-     */
+        step("Заполнение регистрационных данных", () -> {
+            registrationPage
+                    .setFirstName(testData.firstName)
+                    .setLastName(testData.lastName)
+                    .setGender(testData.gender);
+        });
+
+        step("Нашать кнопку Submit", () -> {
+            registrationPage.pressSubmit();
+        });
+
+        step("Проверка заполненных данных", () -> {
+            registrationPage
+                    .checkFormIsNotDisplayed()
+                    .checkEmptyUserNumber();
+        });
+    }
 }
+
+
