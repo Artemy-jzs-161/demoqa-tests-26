@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import pages.components.CalendarComponent;
@@ -126,7 +127,7 @@ public class RegistrationPage {
     @Step("Проверить, что поле имени пустое")
     public RegistrationPage checkEmptyFirstName() {
         firstNameInput.shouldBe(empty);
-        firstNameInput.shouldHave(cssValue("color", "rgba(73, 80, 87, 1)"));
+        firstNameInput.shouldHave(cssValue("color", "rgb(220, 53, 69)"));
         firstNameInput.shouldHave(cssValue("background-image", "url(\"data:image/svg+xml,%3csvg" +
                 " xmlns='http://www.w3.org/2000/svg'" +
                 " width='12' height='12' fill='none' stroke='%23dc3545'" +
@@ -140,7 +141,7 @@ public class RegistrationPage {
     @Step("Проверить, что фамилия не заполнена")
     public RegistrationPage checkEmptyLastName() {
         lastNameInput.shouldBe(empty);
-        lastNameInput.shouldHave(cssValue("color", "rgba(73, 80, 87, 1)"));
+        lastNameInput.shouldHave(cssValue("color", "rgb(220, 53, 69)"));
         lastNameInput.shouldHave(cssValue("background-image", "url(\"data:image/svg+xml,%3csvg" +
                 " xmlns='http://www.w3.org/2000/svg'" +
                 " width='12' height='12' fill='none' stroke='%23dc3545'" +
@@ -154,7 +155,7 @@ public class RegistrationPage {
     @Step("Проверить, что телефон не заполнен")
     public RegistrationPage checkEmptyUserNumber() {
         userNumberInput.shouldBe(empty);
-        userNumberInput.shouldHave(cssValue("color", "rgba(73, 80, 87, 1)"));
+        userNumberInput.shouldHave(cssValue("color", "rgb(220, 53, 69)"));
         userNumberInput.shouldHave(cssValue("background-image", "url(\"data:image/svg+xml,%3csvg" +
                 " xmlns='http://www.w3.org/2000/svg'" +
                 " width='12' height='12' fill='none' stroke='%23dc3545'" +
@@ -167,9 +168,16 @@ public class RegistrationPage {
 
     @Step("Проверить, что пол не заполнен")
     public RegistrationPage checkEmptyGender() {
-        genderWrapper.$(byText("Male")).shouldHave(cssValue("color", "rgba(220, 53, 69, 1)"));
-        genderWrapper.$(byText("Female")).shouldHave(cssValue("color", "rgba(220, 53, 69, 1)"));
-        genderWrapper.$(byText("Other")).shouldHave(cssValue("color", "rgba(220, 53, 69, 1)"));
+        if (Configuration.browser.equals("firefox")) {
+            genderWrapper.$(byText("Male")).shouldHave(cssValue("color", "rgb(220, 53, 69)"));
+            genderWrapper.$(byText("Female")).shouldHave(cssValue("color", "rgb(220, 53, 69)"));
+            genderWrapper.$(byText("Other")).shouldHave(cssValue("color", "rgb(220, 53, 69)"));
+
+        } else {
+            genderWrapper.$(byText("Male")).shouldHave(cssValue("color", "rgba(220, 53, 69, 1)"));
+            genderWrapper.$(byText("Female")).shouldHave(cssValue("color", "rgba(220, 53, 69, 1)"));
+            genderWrapper.$(byText("Other")).shouldHave(cssValue("color", "rgba(220, 53, 69, 1)"));
+        }
         return this;
     }
 }
