@@ -127,7 +127,7 @@ public class RegistrationPage {
     @Step("Проверить, что поле имени пустое")
     public RegistrationPage checkEmptyFirstName() {
         firstNameInput.shouldBe(empty);
-        firstNameInput.shouldHave(cssValue("color", "rgb(220, 53, 69)"));
+        firstNameInput.shouldHave(cssValue("border-color", "rgb(220, 53, 69)"));
         firstNameInput.shouldHave(cssValue("background-image", "url(\"data:image/svg+xml,%3csvg" +
                 " xmlns='http://www.w3.org/2000/svg'" +
                 " width='12' height='12' fill='none' stroke='%23dc3545'" +
