@@ -1,14 +1,12 @@
 package tests;
 
-import api.AuthorizationApi;
-import api.BookApi;
+import api.*;
 import extensions.WithLogin;
 import models.book.*;
 import models.login.*;
 import org.junit.jupiter.api.*;
 import pages.BookStorePage;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static io.qameta.allure.Allure.step;
 import static tests.TestData.TARGET_BOOK_TITLE;

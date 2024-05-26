@@ -2,8 +2,7 @@ package extensions;
 
 import api.AuthorizationApi;
 import io.qameta.allure.Step;
-import models.login.LoginRequestModel;
-import models.login.LoginResponseModel;
+import models.login.*;
 import org.junit.jupiter.api.extension.*;
 import org.openqa.selenium.Cookie;
 import tests.TestData;

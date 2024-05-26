@@ -6,8 +6,7 @@ import models.book.DeleteBookRequestModel;
 import models.login.LoginResponseModel;
 
 import static io.restassured.RestAssured.given;
-import static specs.TestSpecifications.requestSpecification;
-import static specs.TestSpecifications.responseSpecification;
+import static specs.TestSpecifications.*;
 
 public class BookApi {
 

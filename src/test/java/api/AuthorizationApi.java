@@ -1,8 +1,7 @@
 package api;
 
 import io.qameta.allure.Step;
-import models.login.LoginRequestModel;
-import models.login.LoginResponseModel;
+import models.login.*;
 import static io.restassured.RestAssured.given;
 import static specs.TestSpecifications.*;
 
