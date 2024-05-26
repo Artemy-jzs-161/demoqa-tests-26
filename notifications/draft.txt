@@ -1,0 +1,38 @@
+1722599993:AAGZj6CTE9LwAookZRtjqeV3vTc2JWVcSZ8
+
+https://api.telegram.org/bot1722599993:AAGZj6CTE9LwAookZRtjqeV3vTc2JWVcSZ8/getUpdates
+
+490073888
+
+curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "-1002061481650", "text": "1111", "disable_notification": true}'
+ https://api.telegram.org/bot1722599993:AAGZj6CTE9LwAookZRtjqeV3vTc2JWVcSZ8/sendMessage
+
+java "-DconfigFile=${PATH_TO_FILE}" -jar allure-notifications-4.6.1.jar
+
+java "-DconfigFile=notifications -jar allure-notifications-4.6.1.jar
+notifications
+     Необходимо:
+
+     Заменить содержимое chat_id на актуальный идентификатор чата;
+     Указать в text текст желаемого сообщения;
+     disable_notification отвечает за отправку сообщения с уведомлением или без;
+     Заменить $TELEGRAM_BOT_TOKEN на актуальный токен.
+
+
+     {
+       "base": {
+         "project": "some project",
+         "environment": "some env",
+         "comment": "some comment",
+         "reportLink": "",
+         "language": "en",
+         "messenger": "telegram",
+         "allureFolder": "build/allure-report/",
+         "enableChart": true
+       },
+       "telegram": {
+         "token": "asdhsdgfjsdfgFgjhg4831)@",
+         "chat": "-1",
+         "replyTo": ""
+       }
+     }
