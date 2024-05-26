@@ -15,14 +15,12 @@ public class BookStorePage {
     @Step("Открыть страницу профиля")
     public BookStorePage openProfilePage() {
         open("/profile");
-
         return this;
     }
 
     @Step("Проверить, что пользователь вошёл в систему")
     public BookStorePage checkUserLoggedIn() {
         userName.shouldHave(text(USERNAME));
-
         return this;
     }
 

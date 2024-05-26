@@ -13,6 +13,7 @@ import java.util.List;
 import static io.qameta.allure.Allure.step;
 import static tests.TestData.TARGET_BOOK_TITLE;
 
+@DisplayName("Проверка Book store application")
 public class BookTest extends TestBase {
     AuthorizationApi authorizationApi = new AuthorizationApi();
     BookApi bookApi = new BookApi();
@@ -36,14 +37,17 @@ public class BookTest extends TestBase {
     void checkDeleteBook() {
         step("Удалить все книги", () ->
                 bookApi.deleteAllBook(loginResponse));
+
         step("Добавить книгу", () -> {
             List<IsbnModel> isbnList = new ArrayList<>();
             IsbnModel isbn = new IsbnModel(TestData.TARGET_BOOK_ISBN);
             isbnList.add(isbn);
             bookApi.addBook(loginResponse, new AddBookRequestModel(loginResponse.getUserId(), isbnList));
         });
+
         step("Удалить книгу", () ->
                 bookApi.deleteBook(loginResponse, new DeleteBookRequestModel(TestData.TARGET_BOOK_ISBN, loginResponse.getUserId())));
+
         step("Проверить что книги нет в таблице", () -> {
             bookStorePage
                     .openProfilePage()
