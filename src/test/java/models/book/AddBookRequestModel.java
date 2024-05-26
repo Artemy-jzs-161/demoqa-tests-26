@@ -7,7 +7,6 @@ import java.util.List;
 @Data
 public class AddBookRequestModel {
     String userId;
-    @JsonProperty("CollectionOfIsbn")
     List<IsbnModel> collectionOfIsbns;
 
     public AddBookRequestModel(String userId, List<IsbnModel> collectionOfIsbns) {

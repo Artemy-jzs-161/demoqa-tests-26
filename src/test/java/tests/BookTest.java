@@ -33,7 +33,7 @@ public class BookTest extends TestBase {
     @Test
     @DisplayName("Удаление книги")
     @WithLogin
-    void addBook() {
+    void checkDeleteBook() {
         step("Удалить все книги", () ->
                 bookApi.deleteAllBook(loginResponse));
         step("Добавить книгу", () -> {
