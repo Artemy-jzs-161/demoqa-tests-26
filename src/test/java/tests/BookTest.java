@@ -13,7 +13,7 @@ import java.util.List;
 import static io.qameta.allure.Allure.step;
 import static tests.TestData.TARGET_BOOK_TITLE;
 
-public class AddBookTest extends TestBase {
+public class BookTest extends TestBase {
     AuthorizationApi authorizationApi = new AuthorizationApi();
     BookApi bookApi = new BookApi();
     BookStorePage bookStorePage = new BookStorePage();
