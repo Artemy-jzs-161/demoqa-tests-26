@@ -54,6 +54,27 @@ public class BookTest extends TestBase {
                     .checkBookWasDeleted(TARGET_BOOK_TITLE);
         });
     }
+
+    @Test
+    @DisplayName("Добавление книги")
+    @WithLogin
+    void addBookToProfileTest() {
+        step("Удалить все книги", () ->
+                bookApi.deleteAllBook(loginResponse));
+
+        step("Добавить книгу", () -> {
+            List<IsbnModel> isbnList = new ArrayList<>();
+            IsbnModel isbn = new IsbnModel(TestData.TARGET_BOOK_ISBN);
+            isbnList.add(isbn);
+            bookApi.addBook(loginResponse, new AddBookRequestModel(loginResponse.getUserId(), isbnList));
+        });
+
+        step("Проверить, что книга появилась в таблице", () -> {
+            bookStorePage
+                    .openProfilePage()
+                    .checkAddBook(TARGET_BOOK_TITLE);
+        });
+    }
 }
 
 

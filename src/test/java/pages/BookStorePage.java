@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static tests.TestData.USERNAME;
 
@@ -27,6 +28,11 @@ public class BookStorePage {
     @Step("Проверить, что книга удалена")
     public void checkBookWasDeleted(String bookTitle) {
         booksList.shouldNotHave(text(bookTitle));
+    }
+
+    public BookStorePage checkAddBook(String bookTitle) {
+        booksList.shouldHave(text(bookTitle));
+        return this;
     }
 
 }
