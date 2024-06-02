@@ -22,11 +22,11 @@ public interface WebDriverConfig extends Config {
     @DefaultValue("https://demoqa.com")
     String getBaseUri();
 
-    @Key("browserSize")
+    @Key("browser_size")
     @DefaultValue("1920x1080")
     String getBrowserSize();
 
-    @Key("remote")
+    @Key("remote_url")
     String getRemoteUrl();
 }
 
