@@ -6,6 +6,6 @@
 </html>
 
 
-[https://jenkins.autotests.cloud/job/Artemy-jzs-161-demoqa-bookstore-ui-api/](https://jenkins.autotests.cloud/job/Artemy-jzs-161-demoqa-bookstore-owner/)
+[Artemy-jzs-161-demoqa-bookstore-owner](https://jenkins.autotests.cloud/job/Artemy-jzs-161-demoqa-bookstore-owner/)
 
 
