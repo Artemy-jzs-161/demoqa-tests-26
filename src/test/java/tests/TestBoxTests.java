@@ -1,12 +1,18 @@
 package tests;
 
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.*;
 import pages.TestBoxPage;
 
-public class TestBoxPageObjectTests extends TestBase {
-
+@Tag("registration")
+public class TestBoxTests extends TestBase {
     TestBoxPage testBoxPage = new TestBoxPage();
 
+    @Feature("Форма регистрации")
+    @Story("Заполнение формы Text Box")
+    @Owner("Artemy-jzs-161")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Отправка формы со всеми заполненными полями")
     @Test
     void fullSuccessfulRegistrationTest() {
         testBoxPage
