@@ -7,7 +7,6 @@ import pages.RegistrationPage;
 public class TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-    TestData testData = new TestData();
 
 
 
