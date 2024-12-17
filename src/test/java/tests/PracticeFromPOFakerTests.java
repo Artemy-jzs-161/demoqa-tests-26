@@ -31,9 +31,4 @@ public class PracticeFromPOFakerTests extends TestBase {
                 .checkResult("Address", testData.currentAddress)
                 .checkResult("State and City", testData.state + " " + testData.city);
     }
-
-
-
-
-
 }
